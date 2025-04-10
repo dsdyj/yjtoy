@@ -38,13 +38,20 @@ if st.session_state.page == 2:
     if st.button("추첨 하러 가기"):
         go_to_page(3)
 
-# Page 3: Proper image display with st.image
+# Page 3: 박스 선택 페이지
 if st.session_state.page == 3:
-    st.subheader("원하는 럭키박스를 선택해주세요!")
+    st.subheader("아버님! 원하는 럭키박스를 선택해주세요!")
     cols = st.columns(4)
     for i in range(8):
         with cols[i % 4]:
-            st.image("./page3.png", width=100, use_container_width=True)
+            st.markdown(
+                f'''
+                <div style="text-align:center;">
+                    <img src="./page3.png" style="width:70px; max-width:100%; height:auto;">
+                </div>
+                ''',
+                unsafe_allow_html=True
+            )
             if st.button("선택", key=f"box_{i}"):
                 st.session_state.result = prizes[0]
                 go_to_page(4)
