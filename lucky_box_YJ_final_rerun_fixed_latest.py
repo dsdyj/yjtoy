@@ -38,23 +38,20 @@ if st.session_state.page == 2:
     if st.button("추첨 하러 가기"):
         go_to_page(3)
 
-# Page 3: 박스 선택 페이지
+# Page 3: 박스 고르기 - 모바일 최적화 + 이미지 깨짐 해결 버전
 if st.session_state.page == 3:
     st.subheader("아버님! 원하는 럭키박스를 선택해주세요!")
-    cols = st.columns(4)
-    for i in range(8):
+    
+    cols = st.columns(4)  # 한 줄에 4개씩 배치
+    for i in range(8):  # 총 8개의 박스
         with cols[i % 4]:
-            st.markdown(
-                f'''
-                <div style="text-align:center;">
-                    <img src="./page3.png" style="width:70px; max-width:100%; height:auto;">
-                </div>
-                ''',
-                unsafe_allow_html=True
-            )
+            # 박스 이미지 표시 (Streamlit 기본 image 함수 사용)
+            st.image("./page3.png", width=60)  # width=60px 로 모바일 최적화
+            
+            # 박스 아래 '선택' 버튼
             if st.button("선택", key=f"box_{i}"):
-                st.session_state.result = prizes[0]
-                go_to_page(4)
+                st.session_state.result = prizes[0]  # 무조건 신차 인수권 당첨
+                go_to_page(4)  # 결과 페이지로 이동
 
 # Page 4
 if st.session_state.page == 4:
