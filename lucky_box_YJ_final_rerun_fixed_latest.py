@@ -40,7 +40,7 @@ if st.session_state.page == 2:
 
 # Page 3 with responsive images
 if st.session_state.page == 3:
-    st.subheader("아버님! 원하는 럭키박스를 선택해주세요!")
+    st.subheader("원하는 럭키박스를 선택해주세요!")
     cols = st.columns(4)
     for i in range(8):
         with cols[i % 4]:
