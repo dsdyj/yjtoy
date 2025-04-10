@@ -51,7 +51,7 @@ if st.session_state.page == 3:
             
             # 박스 아래 '선택' 버튼
             if st.button("선택", key=f"box_{i}"):
-                st.session_state.result = prizes[0]  # 무조건 신차 인수권 당첨
+                st.session_state.result = prizes[3]  # 무조건 신차 인수권 당첨
                 go_to_page(4)  # 결과 페이지로 이동
 
 # Page 4
