@@ -63,7 +63,7 @@ if st.session_state.page == 4:
 
 ## {st.session_state.result}""")
     if "신차 인수권" in st.session_state.result:
-        st.markdown("### 🎉 아버님! 축하드립니다! 🎉")
+        st.markdown("### 🎉 아버님 어머님! 축하드립니다! 🎉")
         st.markdown("### 지금 바로 출발하시죠! 🚗")
 
     if st.button("처음으로 돌아가기"):
